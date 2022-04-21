@@ -1,0 +1,5 @@
+services:
+  bigg-ingestor:
+    image: bigg-ingestor:1.0-SNAPSHOT
+    build:
+      context: .
