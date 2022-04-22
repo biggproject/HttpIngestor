@@ -23,9 +23,14 @@ public class IngestorResource {
     @PostMapping
     public String ingestData(@RequestBody String data) {
         kafkaTemplate.sendDefault("key", data);
+        log.info("ingested data: \n{}", data);
+        return data;
+    }
 
-        log.info("ingested data: {}", data);
-
-        return String.format("Ingested %s", data);
+    @PostMapping(path = "/harmonize")
+    public HarmonizerInput ingestData(@RequestBody HarmonizerInput harmonizerInput) {
+        kafkaTemplate.sendDefault("key", harmonizerInput);
+        log.info("ingested data: \n{}", harmonizerInput);
+        return harmonizerInput;
     }
 }
