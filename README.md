@@ -1,6 +1,6 @@
 # Introduction
 
-This is the generic ingestor. It currently requires just a String of data as input. The ingestor uses Spring Kafka, all properties are configurable using the present Spring Kafka properties.
+This is a HTTP based ingestor, it uses Spring Boot REST. The ingestor also uses Spring Kafka, all properties are configurable using the present Spring Kafka properties.
 
 
 # Endpoints
