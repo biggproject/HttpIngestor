@@ -31,5 +31,5 @@ Start manual kafka producer inside container (example input: `1:data`):
 Start consumer in kafka container to read data from topic:
 
 ```
-docker composec exec kafka /bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic bigg
+docker compose exec kafka /bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic bigg
 ```

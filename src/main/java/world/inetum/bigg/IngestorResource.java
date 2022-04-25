@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 @RestController
 @RequestMapping("/ingest")
 public class IngestorResource {
@@ -16,21 +20,29 @@ public class IngestorResource {
 
     private final KafkaTemplate<Object, Object> kafkaTemplate;
 
+    private final long TIMEOUT = 10;
+
     public IngestorResource(KafkaTemplate<Object, Object> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
     @PostMapping
-    public String ingestData(@RequestBody String data) {
-        kafkaTemplate.sendDefault("key", data);
+    public String ingestData(@RequestBody String data)
+            throws ExecutionException, InterruptedException, TimeoutException {
+        String result = kafkaTemplate.sendDefault("key", data)
+                .get(TIMEOUT, TimeUnit.SECONDS)
+                .toString();
         log.info("ingested data: \n{}", data);
-        return data;
+        return result;
     }
 
     @PostMapping(path = "/harmonize")
-    public HarmonizerInput ingestData(@RequestBody HarmonizerInput harmonizerInput) {
-        kafkaTemplate.sendDefault("key", harmonizerInput);
+    public String ingestData(@RequestBody HarmonizerInput harmonizerInput)
+            throws ExecutionException, InterruptedException, TimeoutException {
+        String result = kafkaTemplate.sendDefault("key", harmonizerInput)
+                .get(TIMEOUT, TimeUnit.SECONDS)
+                .toString();
         log.info("ingested data: \n{}", harmonizerInput);
-        return harmonizerInput;
+        return result;
     }
 }
