@@ -7,7 +7,8 @@ This is the generic ingestor. It currently requires just a String of data as inp
 
 It is possible to configure the ingestor using Spring properties by passing **environment variables** into the docker container. Spring implements different formats to represent configuration properties ["relaxed bindings"](https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-external-config.html#boot-features-external-config-relaxed-binding)). Injecting these properties as environment variables happens using the **uppercase format**.
 
-[Find a list of all available properties here](https://gist.github.com/geunho/77f3f9a112ea327457353aa407328771)
+[Find a list of all default Spring properties here](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+[Find a list of all available Kafka properties here](https://gist.github.com/geunho/77f3f9a112ea327457353aa407328771)
 
 ## Example Docker Compose Configuration Using Environment Variables
 
