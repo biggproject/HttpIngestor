@@ -3,6 +3,14 @@
 This is the generic ingestor. It currently requires just a String of data as input. The ingestor uses Spring Kafka, all properties are configurable using the present Spring Kafka properties.
 
 
+# Endpoints
+
+```
+/ingest -> raw data
+/ingest/harmonize -> interface for harmonizer
+```
+
+
 # Configuration
 
 It is possible to configure the ingestor using Spring properties by passing **environment variables** into the docker container. Spring implements different formats to represent configuration properties ["relaxed bindings"](https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-external-config.html#boot-features-external-config-relaxed-binding)). Injecting these properties as environment variables happens using the **uppercase format**.
