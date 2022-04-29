@@ -24,4 +24,7 @@ jobs:
           registry: biggregistry.azurecr.io
           username: biggregistry
           password: ${{ secrets.BIGG_REGISTRY_PASSWORD  }}
-          
+      - name: Build docker image
+        run: docker compose build
+      - name: Push docker image
+        run: docker compose push
