@@ -3,12 +3,16 @@
 This is a HTTP based ingestor, it uses Spring Boot REST. The ingestor also uses Spring Kafka, all properties are configurable using the present Spring Kafka properties.
 
 
-# Endpoints
+# Specification
+
+The API has the following endpoints:
 
 ```
 /ingest -> raw data
 /ingest/harmonize -> interface for harmonizer
 ```
+
+A generated OpenAPI specification document can be found [here](bigg-ingestor-openapi.json).
 
 
 # Configuration
