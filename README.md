@@ -48,7 +48,7 @@ The project contains a docker compose file (`/external/docker-compose.yml`) to r
 
 # Building / Pushing Docker Images
 
-Images are pushed to the following registry: (*placeholder*) using these commands:
+Images are pushed to the following registry: `biggregistry.azurecr.io` using these commands:
 
 ```
 $ docker compose build
