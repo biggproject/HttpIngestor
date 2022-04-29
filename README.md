@@ -16,6 +16,7 @@ This is a HTTP based ingestor, it uses Spring Boot REST. The ingestor also uses 
 It is possible to configure the ingestor using Spring properties by passing **environment variables** into the docker container. Spring implements different formats to represent configuration properties ["relaxed bindings"](https://docs.spring.io/spring-boot/docs/2.0.x/reference/html/boot-features-external-config.html#boot-features-external-config-relaxed-binding)). Injecting these properties as environment variables happens using the **uppercase format**.
 
 [Find a list of all default Spring properties here](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+
 [Find a list of all available Kafka properties here](https://gist.github.com/geunho/77f3f9a112ea327457353aa407328771)
 
 ## Example Docker Compose Configuration Using Environment Variables
@@ -32,6 +33,12 @@ It is possible to configure the ingestor using Spring properties by passing **en
       SPRING_KAFKA_PRODUCER_BOOTSTRAPSERVERS: localhost:9092
       SPRING_KAFKA_PRODUCER_VALUESERIALIZER: org.springframework.kafka.support.serializer.JsonSerializer
 ```
+
+## Custom Properites
+
+|property|default value|description|
+|-|-|-|
+|ingestor.kafka.send.timeout|10|How long the ingestor will wait **in seconds** to get and ACK from kafka, before returning an error.|
 
 
 # External Services
