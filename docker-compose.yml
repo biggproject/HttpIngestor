@@ -1,5 +1,5 @@
 services:
   bigg-ingestor:
-    image: bigg-ingestor:${INGESTOR_TAG}
+    image: ${BIGG_REGISTRY}/bigg-ingestor:${INGESTOR_TAG}
     build:
       context: .
