@@ -23,7 +23,7 @@ It is possible to configure the ingestor using Spring properties by passing **en
 
 ```
   bigg-ingestor:
-    image: bigg-ingestor:1.0
+    image: biggregistry.azurecr.io/bigg-ingestor:1.0-SNAPSHOT
     build:
       context: .
     ports:
