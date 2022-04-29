@@ -23,7 +23,7 @@ It is possible to configure the ingestor using Spring properties by passing **en
 
 ```
   bigg-ingestor:
-    image: bigg-ingestor:1.0
+    image: biggregistry.azurecr.io/bigg-ingestor:1.0-SNAPSHOT
     build:
       context: .
     ports:
@@ -34,7 +34,7 @@ It is possible to configure the ingestor using Spring properties by passing **en
       SPRING_KAFKA_PRODUCER_VALUESERIALIZER: org.springframework.kafka.support.serializer.JsonSerializer
 ```
 
-## Custom Properites
+## Custom Properties
 
 |property|default value|description|
 |-|-|-|
@@ -48,7 +48,7 @@ The project contains a docker compose file (`/external/docker-compose.yml`) to r
 
 # Building / Pushing Docker Images
 
-Images are pushed to the following registry: (*placeholder*) using these commands:
+Images are pushed to the following registry: `biggregistry.azurecr.io` using these commands:
 
 ```
 $ docker compose build
