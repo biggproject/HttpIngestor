@@ -1,4 +1,4 @@
-package world.inetum.bigg;
+package world.inetum.bigg.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import world.inetum.bigg.json.KeepAsJsonDeserializer;
@@ -49,7 +49,7 @@ public class HarmonizerInput {
     @Override
     public String toString() {
         return "HarmonizerInput{" +
-                "user='" + user + '\'' +
+                ", user='" + user + '\'' +
                 ", dataSourceName='" + dataSourceName + '\'' +
                 ", collectionType='" + collectionType + '\'' +
                 ", data='" + data + '\'' +
