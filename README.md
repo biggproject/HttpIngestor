@@ -34,7 +34,7 @@ It is possible to configure the ingestor using Spring properties by passing **en
       SPRING_KAFKA_PRODUCER_VALUESERIALIZER: org.springframework.kafka.support.serializer.JsonSerializer
 ```
 
-## Custom Properites
+## Custom Properties
 
 |property|default value|description|
 |-|-|-|
