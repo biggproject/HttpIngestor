@@ -8,6 +8,7 @@ public class HarmonizerInput {
     private String user;
     private String dataSourceName;
     private String collectionType;
+    private String namespace;
 
     @JsonDeserialize(using = KeepAsJsonDeserializer.class)
     private String data;
@@ -44,6 +45,14 @@ public class HarmonizerInput {
 
     public String getData() {
         return data;
+    }
+
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
     }
 
     @Override
