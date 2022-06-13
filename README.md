@@ -77,3 +77,7 @@ Start consumer in kafka container to read data from topic:
 ```
 docker compose exec kafka /bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic bigg
 ```
+
+# TODO
+
+1. The current `HarmonizerInput` class needs to define the interface required by the Harmonizer. This interface is not known yet.
