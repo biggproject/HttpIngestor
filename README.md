@@ -44,6 +44,9 @@ It is possible to configure the ingestor using Spring properties by passing **en
 |property|default value|description|
 |-|-|-|
 |ingestor.kafka.send.timeout|10|How long the ingestor will wait **in seconds** to get and ACK from kafka, before returning an error.|
+|spring.kafka.template.default-topic||The topic data is sent to if no topic is given for the specific request|
+|spring.kafka.producer.bootstrap-servers||The hosts where kafka is deployed|
+|spring.kafka.producer.value-serializer||The class used by default to convert messages to Java classes|
 
 
 # External Services
