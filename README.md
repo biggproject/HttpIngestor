@@ -7,11 +7,11 @@ This is a HTTP based ingestor, it uses Spring Boot REST. The ingestor also uses 
 
 A generated OpenAPI specification document can be found [here](bigg-ingestor-openapi.json). The API has the following endpoints:
 
-## /ingest
+## POST /ingest
 
 This endpoint takes in raw data and pushes it to kafka. It also takes a **topic** and a **key** as request parameters.
 
-## /ingest/harmonize
+## POST /ingest/harmonize
 
 This endpoint defines an interface with fields that are required for the **harmonization process**. It also takes a **topic** and a **key** as request parameters.
 
